@@ -37,7 +37,7 @@ phases:
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
-       - echo Build completed on `date`
+      - echo Build completed on `date`
       - echo Pushing the docker images
       - eval $(aws ecr get-login --no-include-email | sed 's|https://||')
       - docker push $REPOSITORY_URI:latest 
